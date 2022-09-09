@@ -15,13 +15,13 @@
    <script src="{{ asset('backend/js/custom.js') }}"></script>
    
    {{-- dataTables --}}
-   <script src="{{ asset('js/dataTables.min.js') }}"></script>
+   <script src="{{ asset('common/js/dataTables.min.js') }}"></script>
 
    <!-- summernote -->
-   <script src="{{ asset('/') }}summernote/summernote.min.js" ></script>
+   <script src="{{ asset('common') }}/summernote/summernote.min.js"></script>
   
    <!-- Datepicker -->
-   <script src="{{ asset('/') }}js/datepicker.min.js"></script>
+   <script src="{{ asset('common') }}/js/datepicker.min.js"></script>
    
    <script type="text/javascript">
    
@@ -64,3 +64,39 @@
          minViewMode: "months"
       });
    </script>
+
+{{-- switchery[Publication-status(on-off)] --}}
+<script src="{{ asset('common/switchery/switchery.min.js') }}"></script>
+
+<script>   
+   let elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+   elems.forEach(function(html) {
+      let switchery = new Switchery(html,  { size: 'small' });
+   });
+</script>
+
+{{-- switchery toastr [Alert message(on-off)] --}}
+<script src="{{ asset('common/toastr/toastr.min.js') }}"></script>
+<script>
+   // Status change
+   $(document).ready(function(){
+      $('.status').change(function () {
+         let model = $(this).data('model');
+         let field = $(this).data('field');
+         let id = $(this).data('id');
+         let tab = $(this).data('tab');
+         $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: '{{ route('status') }}',
+            data: {'model': model, 'field': field, 'id': id, 'tab': tab},
+            success: function (data) {
+               toastr.options.closeButton = true;
+               toastr.options.closeMethod = 'fadeOut';
+               toastr.options.closeDuration = 100;
+               toastr.success(data.message);
+            }
+         });
+      });
+   });
+</script>

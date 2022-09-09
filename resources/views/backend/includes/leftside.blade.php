@@ -48,6 +48,14 @@
                   <p>Contact Us</p>
                </a>
             </li>
+
+            <li class="nav-item as-treeview">
+               <a href="{{ route('service') }}" class="nav-link {{ (request()->routeIs('service*'))  ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-address-book"></i>
+                  <p>Service page</p>
+               </a>
+            </li>
+            
             
          </ul>
       </nav>

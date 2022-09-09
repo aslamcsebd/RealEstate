@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 08, 2022 at 12:09 PM
+-- Generation Time: Sep 09, 2022 at 08:49 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -150,7 +150,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2021_08_22_135951_create_contacts_table', 1),
 (7, '2022_09_06_231605_create_products_table', 1),
 (8, '2022_09_07_000040_create_usefull_links_table', 1),
-(9, '2022_09_07_000145_create_leaderships_table', 1);
+(9, '2022_09_07_000145_create_leaderships_table', 1),
+(12, '2022_09_10_003246_create_services_table', 2),
+(13, '2022_09_10_003335_create_real_estates_table', 2);
 
 -- --------------------------------------------------------
 
@@ -182,6 +184,57 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `image`, `title`, `details`, `price`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'images/product/1662749642.jpg', 'dfdf', '<p>dfdf</p>', '55', 1, 0, '2022-09-09 18:54:02', '2022-09-09 18:54:02', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `real_estates`
+--
+
+CREATE TABLE `real_estates` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `details` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `orderBy` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `details` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `orderBy` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `title`, `image`, `details`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'This is title', 'images/service/service/1662751398.jpg', '<p>\nLorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat doloribus reiciendis autem! Ipsam quaerat, laudantium, laborum maiores porro similique fugit consectetur sequi dolorem dicta nihil? Voluptatum voluptas accusantium amet quia.\n        </p>', 2, 0, '2022-09-09 19:23:18', '2022-09-09 19:23:18', NULL),
+(2, 'This is second title', 'images/service/service/1662756164.jpg', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi earum exercitationem maiores omnis adipisci autem mollitia officia! Ratione eum tenetur nobis non omnis provident voluptatum voluptates, minus fugiat, libero sapiente.<br></p>', 3, 0, '2022-09-09 20:42:44', '2022-09-09 20:42:44', NULL);
 
 -- --------------------------------------------------------
 
@@ -313,6 +366,18 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `real_estates`
+--
+ALTER TABLE `real_estates`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `social_sites`
 --
 ALTER TABLE `social_sites`
@@ -363,13 +428,25 @@ ALTER TABLE `leaderships`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `real_estates`
+--
+ALTER TABLE `real_estates`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `social_sites`

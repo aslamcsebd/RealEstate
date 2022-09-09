@@ -3,7 +3,7 @@
    <head>
       @include('frontend.includes.head')
    </head>
-   <body>     
+   <body class="">     
       @include('frontend.includes.header')
       <main lass="py-4 container">
          @yield('content')

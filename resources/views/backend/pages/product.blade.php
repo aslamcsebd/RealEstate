@@ -19,10 +19,10 @@
                   <th>No</th>                           
                   <th>Image</th>
                   <th>Title</th>
-                  <th>title</th>
+                  <th>Details</th>
                   <th>Price</th>
                   <th>Order By</th>
-                  <th>Status</th>
+                  <th>Publication-status</th>
                   <th>Action</th>
                </thead>
              

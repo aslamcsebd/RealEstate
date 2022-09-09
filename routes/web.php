@@ -58,12 +58,21 @@ Route::middleware(['auth'])->group(function(){
      
       Route::post('addContact/', 'FooterController@addContact')->name('addContact');
       Route::post('editContact/', 'FooterController@editContact')->name('editContact');
+
+   // Service page
+       Route::get('service/', 'admin\ServiceController@service')->name('service');
+     
+       Route::post('addService/', 'admin\ServiceController@addService')->name('addService');
+       Route::post('editContact/', 'admin\ServiceController@editContact')->name('editContact');
+
+
 });
 
 //Front page route
    Route::get('/who-we-are', 'FrontendController@who_we_are')->name('who-we-are');
 
-   // All status change   
+   // All status change
+      Route::get('/status/update', 'HomeController@changeStatus')->name('status');
       Route::get('itemStatus/{id}/{model}/{tab}','BackendController@itemStatus')->name('itemStatus');
       Route::get('itemDelete/{id}/{model}/{tab}','BackendController@itemDelete')->name('itemDelete');
       
