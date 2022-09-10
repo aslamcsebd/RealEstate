@@ -11,6 +11,10 @@ use App\Models\Leadership;
 use App\Models\Contact;
 use App\Models\SocialSite;
 
+// Service page
+use App\Models\Service;
+use App\Models\RealEstate;
+
 class FrontendController extends Controller{
    
    public function index(){
@@ -26,8 +30,16 @@ class FrontendController extends Controller{
       return view('frontend.home', $data);
    }
 
+   //who_we_are page
    public function who_we_are(){
       $data['info'] = 'This is who we are page';
       return view('frontend.pages.who-we-are', $data);
+   }
+
+   //Service page
+   public function service_page(){
+      $data['Service'] = Service::where('status', 1)->orderBy('orderBy')->get();
+      $data['RealEstate'] = RealEstate::where('status', 1)->orderBy('orderBy')->get();
+      return view('frontend.pages.service-page', $data);
    }
 }

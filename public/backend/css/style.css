@@ -151,3 +151,9 @@ legend {
 .hide{ display: none; }
 
 .dropdown-menu{ min-width: 4rem; background-color: thistle; }
+
+/* imageFile upload */
+.imageFile{ height: unset;}
+
+/* summernote */
+.note-editor.note-frame { border-radius: 0.25rem !important; }

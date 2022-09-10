@@ -12,6 +12,6 @@
    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
    
    <!-- Styles -->
-   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/dataTables.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('frontend/css/dataTables.min.css') }}">
    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">

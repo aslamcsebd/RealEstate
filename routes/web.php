@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
@@ -59,23 +60,33 @@ Route::middleware(['auth'])->group(function(){
       Route::post('addContact/', 'FooterController@addContact')->name('addContact');
       Route::post('editContact/', 'FooterController@editContact')->name('editContact');
 
-   // Service page
-       Route::get('service/', 'admin\ServiceController@service')->name('service');
-     
-       Route::post('addService/', 'admin\ServiceController@addService')->name('addService');
-       Route::post('editContact/', 'admin\ServiceController@editContact')->name('editContact');
+   // Service page       
+      Route::get('service/', 'admin\ServiceController@service')->name('service');
+      
+      // Service
+      Route::post('addService/', 'admin\ServiceController@addService')->name('addService');
+      Route::get('editService/', 'admin\ServiceController@editService')->name('editService');
+      Route::post('editService2/', 'admin\ServiceController@editService2')->name('editService2');
 
+      // Real-Estate
+      Route::post('addRealEstate/', 'admin\ServiceController@addRealEstate')->name('addRealEstate');
+      Route::get('editRealEstate/', 'admin\ServiceController@editRealEstate')->name('editRealEstate');
+      Route::post('editRealEstate2/', 'admin\ServiceController@editRealEstate2')->name('editRealEstate2');
 
 });
 
 //Front page route
    Route::get('/who-we-are', 'FrontendController@who_we_are')->name('who-we-are');
+   Route::get('/service-page', 'FrontendController@service_page')->name('service-page');
 
    // All status change
       Route::get('/status/update', 'HomeController@changeStatus')->name('status');
       Route::get('itemStatus/{id}/{model}/{tab}','BackendController@itemStatus')->name('itemStatus');
-      Route::get('itemDelete/{id}/{model}/{tab}','BackendController@itemDelete')->name('itemDelete');
       
+      //Delete
+      Route::get('itemDelete/{id}/{model}/{tab}','BackendController@itemDelete')->name('itemDelete');
+      Route::get('delete/{model}/{id}/{tab}','CommonCodeController@delete')->name('delete');
+
    // Any title
       Route::post('addAnyTitle/', 'BackendController@addAnyTitle')->name('addAnyTitle');
       Route::post('editAnyTitle/', 'BackendController@editAnyTitle')->name('editAnyTitle');

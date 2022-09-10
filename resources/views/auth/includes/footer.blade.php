@@ -1,8 +1,8 @@
 
 <!-- jQuery -->
-   <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-   <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-   <script src="{{ asset('js/dataTables.min.js') }}"></script>
+   <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
+   <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+   <script src="{{ asset('frontend/js/dataTables.min.js') }}"></script>
    
 {{-- script --}}
    {{-- Navbar Fixed --}}

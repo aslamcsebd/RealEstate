@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 09, 2022 at 08:49 PM
+-- Generation Time: Sep 10, 2022 at 12:39 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -210,6 +210,19 @@ CREATE TABLE `real_estates` (
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `real_estates`
+--
+
+INSERT INTO `real_estates` (`id`, `title`, `image`, `details`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(3, 'Step One', 'images/service/real-estate/1662804495.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Clear &amp; Accurate Pcture of Finances and Financial Goals&nbsp;</span><br></p>', 1, 1, '2022-09-10 10:08:15', '2022-09-10 10:08:15', NULL),
+(4, 'Step Two', 'images/service/real-estate/1662804515.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Clear &amp; Accurate Picture of Property Legal Issues and Responsibilities; plus Financing Process, Terms &amp; Options&nbsp;</span><br></p>', 2, 1, '2022-09-10 10:08:35', '2022-09-10 10:08:35', NULL),
+(5, 'Step Three', 'images/service/real-estate/1662804556.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Clear &amp; Accurate Picture of Property Location, Condition, Value and Price; plus Design &amp; Style&nbsp;</span><br></p>', 3, 1, '2022-09-10 10:09:16', '2022-09-10 10:09:16', NULL),
+(6, 'Step Four', 'images/service/real-estate/1662804605.jpg', 'Clear &amp; Accurate Picture of Pre-Closing Process', 4, 1, '2022-09-10 10:10:05', '2022-09-10 10:10:05', NULL),
+(7, 'Step Five', 'images/service/real-estate/1662804626.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Clear &amp; Accurate Picture and Understanding of Closing Process, &nbsp;Loan Closing Documents and Responsibilities&nbsp;</span><br></p>', 5, 1, '2022-09-10 10:10:26', '2022-09-10 10:10:26', NULL),
+(8, 'Step Six', 'images/service/real-estate/1662804643.png', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Clear and Accurate Picture of Legal, Financing, Property Maintenance and Management Responsibilities</span><br></p>', 6, 1, '2022-09-10 10:10:43', '2022-09-10 10:10:43', NULL),
+(9, 'Step Seven', 'images/service/real-estate/1662804662.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Prepare, Review, Implement and Manage Real Estate Plan to Find, Buy, Finance and Manage new Home and Income Property&nbsp;</span><br></p>', 7, 1, '2022-09-10 10:11:02', '2022-09-10 10:11:02', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -233,8 +246,12 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `title`, `image`, `details`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'This is title', 'images/service/service/1662751398.jpg', '<p>\nLorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat doloribus reiciendis autem! Ipsam quaerat, laudantium, laborum maiores porro similique fugit consectetur sequi dolorem dicta nihil? Voluptatum voluptas accusantium amet quia.\n        </p>', 2, 0, '2022-09-09 19:23:18', '2022-09-09 19:23:18', NULL),
-(2, 'This is second title', 'images/service/service/1662756164.jpg', '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi earum exercitationem maiores omnis adipisci autem mollitia officia! Ratione eum tenetur nobis non omnis provident voluptatum voluptates, minus fugiat, libero sapiente.<br></p>', 3, 0, '2022-09-09 20:42:44', '2022-09-09 20:42:44', NULL);
+(7, 'Select PATH Home or Income Property', 'images/service/service/1662803309.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Choose &nbsp;Buying a 1 Family, Duplex, 2 Family, 3 Family, Condo, Townhouse &nbsp;&amp;/or Buying a Multi-Unit (1-4 unit ) Income Property to generate Income and Equity/Wealth to become Financially Independent.</span><br></p>', 1, 1, '2022-09-10 09:48:29', '2022-09-10 09:48:29', NULL),
+(8, 'Select Gold Key Assistance or Platinum Turnkey Service to Prepare Real Estate Plan', 'images/service/service/1662803579.jpg', '<p>Option DIY or KRIBTREE Will DO IT 4 OR WITH YOU.<br></p>', 2, 1, '2022-09-10 09:52:59', '2022-09-10 09:52:59', NULL),
+(9, 'Select Property Type- Build, Renovate or Existing', 'images/service/service/1662803602.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Select Newly Constructed, Custom Built. Re-designed, Renovated or Existing Home and Income Property&nbsp;</span><br></p>', 3, 1, '2022-09-10 09:53:22', '2022-09-10 09:53:22', NULL),
+(10, 'Receive Savings 4 Professional Network Services', 'images/service/service/1662803624.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">Use Professional Network Service Provider and Receive CashBack.&nbsp;</span><br></p>', 4, 1, '2022-09-10 09:53:44', '2022-09-10 09:53:44', NULL),
+(11, 'Select PATH, Type of Property and Location', 'images/service/service/1662803651.jpg', '<p><span style=\"color: rgb(94, 94, 94); font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; text-align: center;\">KRIBTREE will Prepare and Manage your Real Estate Plan based on your criteria and provide Services required and needed to complete acquisition, financing &amp; managementof Home &amp; Income Property&nbsp;</span><br></p>', 5, 1, '2022-09-10 09:54:11', '2022-09-10 09:54:11', NULL),
+(12, 'Questions', 'images/service/service/1662803712.jpg', '<p><span class=\"x-el x-el-span c1-27 c1-28 c1-b c1-a2 c1-41 c1-4w c1-a3\" style=\"box-sizing: inherit; font-family: &quot;Source Sans Pro&quot;, arial, sans-serif; color: rgb(94, 94, 94); font-weight: 700; line-height: inherit; text-align: center;\">Buy New&nbsp; Construction, Existing Home Or Income Property? Buy Income Property TOBE Financially&nbsp; Independent? Buy&nbsp; Custom Built Home? During Planning Process Auestions Will Be Answered 4 Your Understandingfg</span></p>', 6, 1, '2022-09-10 09:55:12', '2022-09-10 09:55:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -317,7 +334,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Aslam', 'admin@gmail.com', '2022-09-06 20:35:25', '$2y$10$p6R6/T/.TOl43T47PQO/kezYdWMCmVOTxW74ZGChOkPo8N7y9BjYS', '123', NULL, NULL);
+(1, 'Aslam', 'admin@gmail.com', '2022-09-06 20:35:25', '$2y$10$p6R6/T/.TOl43T47PQO/kezYdWMCmVOTxW74ZGChOkPo8N7y9BjYS', '8k0QYeoIBeGiq2c9Irn0ATf19g7hbXXJ1DGL4ubbHnX5D7OWRr0K8rgTB5aw', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -416,7 +433,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `homes`
 --
 ALTER TABLE `homes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `leaderships`
@@ -440,13 +457,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `real_estates`
 --
 ALTER TABLE `real_estates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `social_sites`

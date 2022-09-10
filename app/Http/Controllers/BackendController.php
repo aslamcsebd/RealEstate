@@ -77,13 +77,13 @@ class BackendController extends Controller {
          $messages = $validator->messages(); 
          return Redirect::back()->withErrors($validator);
       }
-      $path="home/";
+      $path="images/home/";
       if ($request->hasFile('image')){
          if($files=$request->file('image')){
             $picture = $request->image;
             $fullName=time().".".$picture->getClientOriginalExtension();
-            $files->move(imagePath($path), $fullName);
-            $imageLink = imagePath($path). $fullName;
+            $files->move(public_path($path), $fullName);
+            $imageLink = $path. $fullName;
 
             Home::where('id', $request->id)->update([
                'image'=>$imageLink,

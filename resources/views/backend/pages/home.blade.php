@@ -77,7 +77,7 @@
 
 @section('js')
 
-   {{-- Add image --}}
+      {{-- Add image --}}
       <div class="modal fade" id="addImage" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -118,7 +118,7 @@
          </div>
       </div>
 
-   {{-- edit home image --}}
+      {{-- edit home image --}}
       <div class="modal fade" id="editHome" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
             <div class="modal-content">

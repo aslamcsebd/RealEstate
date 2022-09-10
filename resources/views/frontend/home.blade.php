@@ -24,6 +24,7 @@
             <ul class="list_load">
                 <li class="list_item"><a href="{{ Route('who-we-are') }}">Who we are</a></li>
                 
+                <li class="list_item"><a href="{{Route('service-page')}}">Service</a></li>
                 <li class="list_item"><a href="#">What we do</a></li>
                 <li class="list_item"><a href="#">How we do it</a></li>
                 <li class="list_item"><a href="#">What they're saying</a></li>

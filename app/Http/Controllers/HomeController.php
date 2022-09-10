@@ -38,5 +38,6 @@ class HomeController extends Controller{
       DB::table($model)->where('id', $id)->update([$field => $action]);
       return response()->json(['message' => 'Status updated successfully.']);
    }
+
    
 }
