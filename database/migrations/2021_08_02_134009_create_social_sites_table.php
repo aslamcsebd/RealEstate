@@ -19,7 +19,7 @@ class CreateSocialSitesTable extends Migration
             $table->string('socialName', 50);
             $table->string('socialUrl', 150);
             $table->integer('orderBy');
-            $table->tinyInteger('status');
+            $table->tinyInteger('status')->default('1');
             $table->timestamps();
             $table->softDeletes();
         });

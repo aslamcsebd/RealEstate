@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactsTable extends Migration
+class CreateProfessionalNetServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('professional_net_services', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150);
-            $table->string('logo', 150);
-            $table->string('details');
+            $table->string('image');
+            $table->longText('details');
             $table->integer('orderBy');
             $table->tinyInteger('status')->default('1');
             $table->timestamps();
@@ -32,6 +31,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_types');
+        Schema::dropIfExists('professional_net_services');
     }
 }

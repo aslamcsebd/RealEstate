@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 10, 2022 at 12:39 PM
+-- Generation Time: Sep 10, 2022 at 09:06 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -152,7 +152,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2022_09_07_000040_create_usefull_links_table', 1),
 (9, '2022_09_07_000145_create_leaderships_table', 1),
 (12, '2022_09_10_003246_create_services_table', 2),
-(13, '2022_09_10_003335_create_real_estates_table', 2);
+(13, '2022_09_10_003335_create_real_estates_table', 2),
+(17, '2022_09_11_000229_create_professional_networks_table', 3),
+(18, '2022_09_11_005013_create_professional_network_services_table', 3),
+(19, '2022_09_11_012942_create_professional_net_services_table', 4);
 
 -- --------------------------------------------------------
 
@@ -191,6 +194,41 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `image`, `title`, `details`, `price`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'images/product/1662749642.jpg', 'dfdf', '<p>dfdf</p>', '55', 1, 0, '2022-09-09 18:54:02', '2022-09-09 18:54:02', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `professional_networks`
+--
+
+CREATE TABLE `professional_networks` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `details` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `orderBy` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `professional_net_services`
+--
+
+CREATE TABLE `professional_net_services` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `details` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `orderBy` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -383,6 +421,18 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `professional_networks`
+--
+ALTER TABLE `professional_networks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `professional_net_services`
+--
+ALTER TABLE `professional_net_services`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `real_estates`
 --
 ALTER TABLE `real_estates`
@@ -445,13 +495,25 @@ ALTER TABLE `leaderships`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `professional_networks`
+--
+ALTER TABLE `professional_networks`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `professional_net_services`
+--
+ALTER TABLE `professional_net_services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `real_estates`

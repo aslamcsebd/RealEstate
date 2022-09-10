@@ -109,6 +109,70 @@
    </form> 
 @endif
 
+@if(isset($ProfessionalNetwork))
+   <form action="{{ url('editProfessionalNetwork2') }}" method="post" enctype="multipart/form-data" class="needs-validation" >
+      @csrf    
+      <div class="form-group row">
+         <input name="id" value="{{$ProfessionalNetwork->id}}" hidden>
+         <input name="oldImage" value="{{$ProfessionalNetwork->image}}" hidden>
+         <div class="col-4">
+            <label for="old">Present image :</label>
+            <img class="rounded" src="{{$ProfessionalNetwork->image}}" width="150" height="80">
+         </div>
+         <div class="col-8">
+            <label for="image">Upload new image :</label>
+            <input type="file" class="form-control col imageFile" id="image" name="image">
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label for="title">Professional network title :</label>
+         <input type="text" name="title" id="title" class="form-control" value="{{$ProfessionalNetwork->title}}" placeholder="Ex: This is title name..." required>
+      </div>
+
+      <div class="form-group">
+         <label for="details">Professional network details :</label>
+         <textarea type="text" class="form-control summernote" id="details" name="details" required>{{$ProfessionalNetwork->details}}</textarea>
+      </div>
+
+      <div class="modal-footer">
+         <div class="btn-group">
+            <button class="btn btn-sm btn-primary">Edit now</button>
+            <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </form> 
+@endif
+
+@if(isset($ProfessionalNetService))
+   <form action="{{ url('editProfessionalNetService2') }}" method="post" enctype="multipart/form-data" class="needs-validation" >
+      @csrf    
+      <div class="form-group row">
+         <input name="id" value="{{$ProfessionalNetService->id}}" hidden>
+         <input name="oldImage" value="{{$ProfessionalNetService->image}}" hidden>
+         <div class="col-4">
+            <label for="old">Present image :</label>
+            <img class="rounded" src="{{$ProfessionalNetService->image}}" width="150" height="80">
+         </div>
+         <div class="col-8">
+            <label for="image">Upload new image :</label>
+            <input type="file" class="form-control col imageFile" id="image" name="image">
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label for="details">Professional network nervice details :</label>
+         <textarea type="text" class="form-control summernote" id="details" name="details" required>{{$ProfessionalNetService->details}}</textarea>
+      </div>
+
+      <div class="modal-footer">
+         <div class="btn-group">
+            <button class="btn btn-sm btn-primary">Edit now</button>
+            <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </form> 
+@endif
 
 <!-- summernote -->
 <script src="{{ asset('/') }}summernote/summernote.min.js"></script>

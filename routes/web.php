@@ -73,6 +73,19 @@ Route::middleware(['auth'])->group(function(){
       Route::get('editRealEstate/', 'admin\ServiceController@editRealEstate')->name('editRealEstate');
       Route::post('editRealEstate2/', 'admin\ServiceController@editRealEstate2')->name('editRealEstate2');
 
+   // Professional network page       
+      Route::get('professional-network/', 'admin\ProfessionalNetworkController@professionalNetwork')->name('professional-network');
+      
+      // Professional network
+      Route::post('addProfessionalNetwork/', 'admin\ProfessionalNetworkController@addProfessionalNetwork')->name('addProfessionalNetwork');
+      Route::get('editProfessionalNetwork/', 'admin\ProfessionalNetworkController@editProfessionalNetwork')->name('editProfessionalNetwork');
+      Route::post('editProfessionalNetwork2/', 'admin\ProfessionalNetworkController@editProfessionalNetwork2')->name('editProfessionalNetwork2');
+
+      // Professional network service
+      Route::post('addProfessionalNetService/', 'admin\ProfessionalNetworkController@addProfessionalNetService')->name('addProfessionalNetService');
+      Route::get('editProfessionalNetService/', 'admin\ProfessionalNetworkController@editProfessionalNetService')->name('editProfessionalNetService');
+      Route::post('editProfessionalNetService2/', 'admin\ProfessionalNetworkController@editProfessionalNetService2')->name('editProfessionalNetService2');
+
 });
 
 //Front page route

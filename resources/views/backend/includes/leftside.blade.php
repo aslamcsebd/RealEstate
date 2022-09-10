@@ -56,6 +56,12 @@
                </a>
             </li>
             
+            <li class="nav-item as-treeview">
+               <a href="{{ route('professional-network') }}" class="nav-link {{ (request()->routeIs('professional-network*'))  ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-address-book"></i>
+                  <p>Professional network</p>
+               </a>
+            </li>
             
          </ul>
       </nav>

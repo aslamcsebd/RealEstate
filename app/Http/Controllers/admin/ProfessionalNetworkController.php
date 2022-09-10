@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,20 +10,20 @@ use Redirect;
 use DB;
 use Carbon\Carbon;
 
-use App\Models\Service;
-use App\Models\RealEstate;
+use App\Models\ProfessionalNetwork;
+use App\Models\ProfessionalNetService;
 
-class ServiceController extends Controller {
+class ProfessionalNetworkController extends Controller {
 
-   //Service page
-   public function service(){
-      $data['Service'] = Service::orderBy('orderBy')->get();
-      $data['RealEstate'] = RealEstate::orderBy('orderBy')->get();
-      return view('backend.pages.service', $data);
+   // Professional network page
+   public function professionalNetwork(){
+      $data['ProfessionalNetwork'] = ProfessionalNetwork::orderBy('orderBy')->get();
+      $data['ProfessionalNetService'] = ProfessionalNetService::orderBy('orderBy')->get();
+      return view('backend.pages.professional-network', $data);
    }
 
-   // addService
-   public function addService(Request $request){
+   // addProfessionalNetwork
+   public function addProfessionalNetwork(Request $request){
 
       $validator = Validator::make($request->all(),[
          'title'=>'required',
@@ -36,10 +36,10 @@ class ServiceController extends Controller {
          return Redirect::back()->withErrors($validator);
       }
 
-      $id=Service::latest('orderBy')->first();
+      $id=ProfessionalNetwork::latest('orderBy')->first();
       ($id==null) ? $orderId=1 : $orderId=$id->orderBy+1;
 
-      $path="images/service/service/";
+      $path="images/professional-network/";
       $default="default.jpg";
       if ($request->hasFile('image')){
       if($files=$request->file('image')){
@@ -52,24 +52,24 @@ class ServiceController extends Controller {
          $imageLink = $path . $default;
       }   
 
-      Service::create([
+      ProfessionalNetwork::create([
          'title'=>$request->title,
          'image'=>$imageLink,
          'details'=>$request->details,
          'orderBy'=>$orderId
       ]);
 
-      return back()->with('success','Service info add successfully');
+      return back()->with('success','Professional network info add successfully');
    }
 
-   // editService [ajaxView]
-   public function editService(){
-      $data['Service'] = Service::find($_REQUEST['id']);
+   // editProfessionalNetwork [ajaxView]
+   public function editProfessionalNetwork(){
+      $data['ProfessionalNetwork'] = ProfessionalNetwork::find($_REQUEST['id']);
       return view('backend.pages.ajaxView', $data);
    }
 
-   // editService2 [edit now]
-   public function editService2(Request $request){
+   // editProfessionalNetwork2 [edit now]
+   public function editProfessionalNetwork2(Request $request){
       $validator = Validator::make($request->all(),[
          'title'=>'required',
          'details'=>'required'
@@ -79,8 +79,8 @@ class ServiceController extends Controller {
          $messages = $validator->messages(); 
          return Redirect::back()->withErrors($validator);
       }
-
-      $path="images/service/service/";
+      
+      $path="images/professional-network/";
       if ($request->hasFile('image')){
          if($files=$request->file('image')){
             $image = $request->image;
@@ -88,7 +88,7 @@ class ServiceController extends Controller {
             $files->move(public_path($path), $fullName);
             $imageLink = $path. $fullName;
 
-            Service::where('id', $request->id)->update([
+            ProfessionalNetwork::where('id', $request->id)->update([
                'title'=>$request->title,
                'image'=>$imageLink,
                'details'=>$request->details,
@@ -96,20 +96,19 @@ class ServiceController extends Controller {
             (file_exists($request->oldImage) ? unlink($request->oldImage) : '');
          }
       }else{
-         Service::where('id', $request->id)->update([
+         ProfessionalNetwork::where('id', $request->id)->update([
             'title'=>$request->title,
             'details'=>$request->details,
          ]);
       }
-      return back()->with('success','Service\'s info edit successfully');
+      return back()->with('success','Professional network\'s info edit successfully');
    }
 
 
-   // addRealEstate
-   public function addRealEstate(Request $request){
+   // addProfessionalNetService
+   public function addProfessionalNetService(Request $request){
 
       $validator = Validator::make($request->all(),[
-         'title'=>'required',
          'image'=>'required',
          'details'=>'required'
       ]);   
@@ -119,10 +118,10 @@ class ServiceController extends Controller {
          return Redirect::back()->withErrors($validator);
       }
 
-      $id=RealEstate::latest('orderBy')->first();
+      $id=ProfessionalNetService::latest('orderBy')->first();
       ($id==null) ? $orderId=1 : $orderId=$id->orderBy+1;
 
-      $path="images/service/real-estate/";
+      $path="images/professional-network/";
       $default="default.jpg";
       if ($request->hasFile('image')){
       if($files=$request->file('image')){
@@ -133,38 +132,41 @@ class ServiceController extends Controller {
       }
       }else{
          $imageLink = $path . $default;
-      }   
-     
-      RealEstate::create([
-         'title'=>$request->title,
+      }
+      
+      ProfessionalNetService::create([
          'image'=>$imageLink,
          'details'=>$request->details,
          'orderBy'=>$orderId
       ]);
 
-      $tab = 'realEstate';
-      return back()->with('success','Real-estate info add successfully')->withInput(['tab' => $tab]);
+      $tab = 'professionalNetService';
+      return back()->with('success','Professional network service info add successfully')->withInput(['tab' => $tab]);
    }
 
-   // editRealEstate [ajaxView]
-   public function editRealEstate(){
-      $data['RealEstate'] = RealEstate::find($_REQUEST['id']);
+   // editProfessionalNetService [ajaxView]
+   public function editProfessionalNetService(){
+      $data['ProfessionalNetService'] = ProfessionalNetService::find($_REQUEST['id']);
       return view('backend.pages.ajaxView', $data);
    }
 
-   // editRealEstate2 [edit now]
-   public function editRealEstate2(Request $request){
+   // editProfessionalNetService2 [edit now]
+   public function editProfessionalNetService2(Request $request){
       $validator = Validator::make($request->all(),[
-         'title'=>'required',
          'details'=>'required'
       ]); 
+
+      if(file_exists($request->oldImage)){
+         $a = "ok";
+      }else{ $a = "no";}
+dd($a);
 
       if($validator->fails()){
          $messages = $validator->messages(); 
          return Redirect::back()->withErrors($validator);
       }
 
-      $path="images/service/real-estate/";
+      $path="images/professional-network/";
       if ($request->hasFile('image')){
          if($files=$request->file('image')){
             $image = $request->image;
@@ -172,22 +174,20 @@ class ServiceController extends Controller {
             $files->move(public_path($path), $fullName);
             $imageLink = $path. $fullName;
 
-            RealEstate::where('id', $request->id)->update([
-               'title'=>$request->title,
+            ProfessionalNetService::where('id', $request->id)->update([
                'image'=>$imageLink,
                'details'=>$request->details,
             ]);
             (file_exists($request->oldImage) ? unlink($request->oldImage) : '');
          }
       }else{
-         RealEstate::where('id', $request->id)->update([
-            'title'=>$request->title,
+         ProfessionalNetService::where('id', $request->id)->update([
             'details'=>$request->details,
          ]);
       }
 
-      $tab = 'realEstate';
-      return back()->with('success','Real-estate\'s info edit successfully')->withInput(['tab' => $tab]);
+      $tab = 'professionalNetService';
+      return back()->with('success','Professional network service\'s info edit successfully')->withInput(['tab' => $tab]);
    }
-
+      
 }
