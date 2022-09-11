@@ -1,7 +1,7 @@
 
-<nav id="navbar_top" class="navbar navbar-expand-md navbar-light navbar-muted shadow-sm bg-light">   
-   <a class="navbar-brand" href="{{ url('/') }}">
-      Victory Loves Preparation
+<nav id="navbar_top" class="navbar navbar-expand-md navbar-light navbar-muted shadow-sm bg-light py-0" style="height:4rem;">   
+   <a class="navbar-brand" href="#">
+      @include('common.logo')
    </a>
    <button class="navbar-toggler text-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
    <span class="navbar-toggler-icon"></span>

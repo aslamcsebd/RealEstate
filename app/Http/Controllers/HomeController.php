@@ -10,7 +10,13 @@ use App\Models\Product;
 use App\Models\UsefullLink;
 use App\Models\Leadership;
 use App\Models\Contact;
-use App\Models\SocialSite;
+use App\Models\SocialSite;   
+
+use App\Models\Service;
+use App\Models\RealEstate;
+
+use App\Models\ProfessionalNetwork;
+use App\Models\ProfessionalNetService;
 
 class HomeController extends Controller{
  
@@ -21,7 +27,13 @@ class HomeController extends Controller{
       $data['UsefullLink'] = UsefullLink::all();
       $data['Leadership'] = Leadership::all(); 
       $data['Contact'] = Contact::all();
-      $data['SocialSite'] = SocialSite::all(); 
+      $data['SocialSite'] = SocialSite::all();
+
+      $data['Service'] = Service::all();
+      $data['RealEstate'] = RealEstate::all(); 
+
+      $data['ProfessionalNetwork'] = ProfessionalNetwork::all();
+      $data['ProfessionalNetService'] = ProfessionalNetService::all();
    
       return view('backend.index', $data);
    }

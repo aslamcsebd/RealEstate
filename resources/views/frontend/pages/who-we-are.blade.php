@@ -1,5 +1,8 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <h2 style="text-align: center; margin-top: 200px">{{$info}}</h2>
+
+    @include('frontend.includes.menu-title')
+    <h1 style="text-align: center; margin-top: 200px">{{$info}}</h1>
+
 @endsection

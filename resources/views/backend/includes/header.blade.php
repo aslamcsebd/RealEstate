@@ -1,6 +1,6 @@
-<nav id="navbar_top" class="navbar navbar-expand-md navbar-light navbar-muted shadow-sm py-0" style="height:3rem;">   
+<nav id="navbar_top" class="navbar navbar-expand-md navbar-light navbar-muted shadow-sm py-0" style="height:4rem;">   
    <a class="navbar-brand p-0 m-0" href="{{ url('/admin') }}">
-      <img src="{{asset('images/home.png')}}" alt="Logo" title="Architect Company" width="80" height="70">
+      @include('common.logo')
    </a>
    <button class="navbar-toggler text-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
    <span class="navbar-toggler-icon"></span>

@@ -70,6 +70,7 @@ class ServiceController extends Controller {
 
    // editService2 [edit now]
    public function editService2(Request $request){
+      
       $validator = Validator::make($request->all(),[
          'title'=>'required',
          'details'=>'required'

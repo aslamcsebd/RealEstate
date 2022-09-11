@@ -70,6 +70,7 @@ class ProfessionalNetworkController extends Controller {
 
    // editProfessionalNetwork2 [edit now]
    public function editProfessionalNetwork2(Request $request){
+      
       $validator = Validator::make($request->all(),[
          'title'=>'required',
          'details'=>'required'

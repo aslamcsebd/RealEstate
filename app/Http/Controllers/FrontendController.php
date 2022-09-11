@@ -15,6 +15,10 @@ use App\Models\SocialSite;
 use App\Models\Service;
 use App\Models\RealEstate;
 
+// Professional-network
+use App\Models\ProfessionalNetwork;
+use App\Models\ProfessionalNetService;
+
 class FrontendController extends Controller{
    
    public function index(){
@@ -30,16 +34,24 @@ class FrontendController extends Controller{
       return view('frontend.home', $data);
    }
 
-   //who_we_are page
+   // who_we_are page
    public function who_we_are(){
       $data['info'] = 'This is who we are page';
       return view('frontend.pages.who-we-are', $data);
    }
 
-   //Service page
+   // Service page
    public function service_page(){
       $data['Service'] = Service::where('status', 1)->orderBy('orderBy')->get();
       $data['RealEstate'] = RealEstate::where('status', 1)->orderBy('orderBy')->get();
       return view('frontend.pages.service-page', $data);
    }
+
+   // Professional-network
+   public function professional_network(){
+      $data['ProfessionalNetwork'] = ProfessionalNetwork::where('status', 1)->orderBy('orderBy')->get();
+      $data['ProfessionalNetService'] = ProfessionalNetService::where('status', 1)->orderBy('orderBy')->get();
+      return view('frontend.pages.professional-network', $data);
+   }
+   
 }

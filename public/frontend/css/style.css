@@ -1,4 +1,6 @@
 .hide{ display: none !important;}
+.justify{ text-align: justify; }
+h1{ font-family: 'Cinzel', serif; }
 
 body, html {
     background-image: unset;
@@ -94,8 +96,9 @@ a,
 		height: 100vh;
 		left: -250px;
 		position: absolute;
-		top: 3rem;
-		width: 250px;        
+		top: 4.1rem;
+		width: 250px;     
+		z-index: 1;   
 	}
 	.side_menu .container {
 		padding: 0 1em;
@@ -206,3 +209,6 @@ a,
 	.list_item a:hover {
 		background: rgba(255,255,255,.2);
 	}
+
+	/* side_menu { */
+	.list_item .active { background: rgba(255,255,255,.2); }

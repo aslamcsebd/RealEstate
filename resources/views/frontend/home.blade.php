@@ -7,33 +7,8 @@
     </video>
     <h1 class="centered">IA | Interior Architects</h1>  
     
-    <div class="side_menu">
-        <div class="burger_box">
-            <div class="menu-icon-container">
-                <a href="#" class="menu-icon js-menu_toggle closed">
-                    <span class="menu-icon_box">
-                        <span class="menu-icon_line menu-icon_line--1"></span>
-                        <span class="menu-icon_line menu-icon_line--2"></span>
-                        <span class="menu-icon_line menu-icon_line--3"></span>
-                    </span>
-                </a>
-            </div>
-        </div>
-        <div class="px-3">
-            <h4 class="menu_title pt-2 text-white">Menu Title</h4>
-            <ul class="list_load">
-                <li class="list_item"><a href="{{ Route('who-we-are') }}">Who we are</a></li>
-                
-                <li class="list_item"><a href="{{Route('service-page')}}">Service</a></li>
-                <li class="list_item"><a href="#">What we do</a></li>
-                <li class="list_item"><a href="#">How we do it</a></li>
-                <li class="list_item"><a href="#">What they're saying</a></li>
-                <li class="list_item"><a href="#">What we're saying</a></li>
-                <li class="list_item"><a href="#">Find IA</a></li>
-            </ul>
-        </div>
-    </div> 
-
+    @include('frontend.includes.menu-title')
+   
     @foreach($Home as $item)
         <div class="box">
             <img src="{{$item->image}}" alt="{{$item->title}}" style="width:100%; height:600px;">
