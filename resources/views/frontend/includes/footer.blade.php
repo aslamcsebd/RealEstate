@@ -1,4 +1,63 @@
 
+    <footer class="row justify-content-center bg-light">
+
+      <div class="col-md-3">
+      <ul>  
+          <h4>Useful links</h4>
+
+              @foreach($UsefullLink as $item)
+                  <li> <a href="{{$item->url}}" target="_blank"> {{$item->title}}</a></li>
+              @endforeach
+      </ul>
+      </div>
+  
+      <div class="col-md-3">      
+          <ul>
+              <h4>Thought leadership</h4>
+              @foreach($Leadership as $item)
+                  <li> <a href="{{$item->url}}" target="_blank"> {{$item->title}}</a></li>
+              @endforeach
+      </ul>
+      </div>
+  
+      <div class="col-3">
+      
+      <ul>
+          <h4>Contact</h4>
+              @foreach($Contact as $item)
+                  <li>
+                  {!!$item->logo!!} {!!$item->details!!}
+                  </li>
+              @endforeach
+      </ul>
+      </div>
+  
+      <div class="col-3">    
+  
+      <ul class="social">
+              <h4>Social</h4>
+              @foreach($SocialSite as $item)
+                  <li>                    
+                      <a href="{!!$item->socialUrl!!}" target="_blank" title="{!!$item->socialName!!}">
+                          {!!$item->socialLogo!!}
+                      </a>
+                  </li>
+              @endforeach
+          </ul>
+  
+      <ul>
+          <li>
+              <a href="#" target="_blank">Subscribe</a>
+          </li>
+          <li>
+              <a href="#" target="_blank">Privacy policy</a>
+          </li>
+      </ul>
+      </div>
+  
+  </footer>   
+
+
 <!-- jQuery -->
 <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
@@ -91,4 +150,12 @@
         aboutText: 'Write Something',
         introMessage: "✋ Hi! I'm form Real Programmer"
     };
+
+    (function(){
+ 
+ $("#cart").on("click", function() {
+   $(".shopping-cart").fadeToggle( "fast");
+ });
+ 
+})();
 </script>

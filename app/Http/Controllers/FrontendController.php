@@ -37,6 +37,11 @@ class FrontendController extends Controller{
    // who_we_are page
    public function who_we_are(){
       $data['info'] = 'This is who we are page';
+
+      $data['UsefullLink'] = UsefullLink::where('status', 1)->orderBy('orderBy')->get();
+      $data['Leadership'] = Leadership::where('status', 1)->orderBy('orderBy')->get(); 
+      $data['Contact'] = Contact::where('status', 1)->orderBy('orderBy')->get();
+      $data['SocialSite'] = SocialSite::where('status', 1)->orderBy('orderBy')->get(); 
       return view('frontend.pages.who-we-are', $data);
    }
 
@@ -44,6 +49,11 @@ class FrontendController extends Controller{
    public function service_page(){
       $data['Service'] = Service::where('status', 1)->orderBy('orderBy')->get();
       $data['RealEstate'] = RealEstate::where('status', 1)->orderBy('orderBy')->get();
+
+      $data['UsefullLink'] = UsefullLink::where('status', 1)->orderBy('orderBy')->get();
+      $data['Leadership'] = Leadership::where('status', 1)->orderBy('orderBy')->get(); 
+      $data['Contact'] = Contact::where('status', 1)->orderBy('orderBy')->get();
+      $data['SocialSite'] = SocialSite::where('status', 1)->orderBy('orderBy')->get(); 
       return view('frontend.pages.service-page', $data);
    }
 
@@ -51,6 +61,11 @@ class FrontendController extends Controller{
    public function professional_network(){
       $data['ProfessionalNetwork'] = ProfessionalNetwork::where('status', 1)->orderBy('orderBy')->get();
       $data['ProfessionalNetService'] = ProfessionalNetService::where('status', 1)->orderBy('orderBy')->get();
+
+      $data['UsefullLink'] = UsefullLink::where('status', 1)->orderBy('orderBy')->get();
+      $data['Leadership'] = Leadership::where('status', 1)->orderBy('orderBy')->get(); 
+      $data['Contact'] = Contact::where('status', 1)->orderBy('orderBy')->get();
+      $data['SocialSite'] = SocialSite::where('status', 1)->orderBy('orderBy')->get(); 
       return view('frontend.pages.professional-network', $data);
    }
    

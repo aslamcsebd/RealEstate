@@ -45,7 +45,7 @@
             </li>
             <li class="list_item">
                 <a class="{{ (request()->routeIs(''))  ? 'active' : '' }}"
-                    href="#">Find IA</a>
+                    href="#">Find KRIBTREE</a>
             </li>
         </ul>
     </div>

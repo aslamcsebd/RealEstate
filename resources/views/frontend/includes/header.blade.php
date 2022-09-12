@@ -9,6 +9,20 @@
    <div class="collapse navbar-collapse" id="navbarSupportedContent">     
 
       <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+            <form class="form-inline">
+               <input class="form-control btn-sm" type="search" placeholder="Search" aria-label="Search">
+               <button class="btn btn-sm btn-outline-primary px-0" style="width: 10px !important;" type="submit">Search</button>
+            </form>
+         </li>
+         <li class="nav-item">
+            <a href="#">
+               <i class="fa-solid fa-cart-shopping ml-2 p-2 mt-1" style="font-size: 18px; adding-top: 15px;"></i>
+            </a>         
+         </li>
+      </ul>
+
+      {{-- <ul class="navbar-nav ml-auto">
          @guest
             <li class="nav-item">
                <a class="nav-link" href="{{ route('admin') }}">{{ __('Login') }}</a>
@@ -38,6 +52,6 @@
             </div>
          </li>
          @endguest
-      </ul>
+      </ul> --}}
    </div>
 </nav>

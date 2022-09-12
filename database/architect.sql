@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 11, 2022 at 11:09 AM
+-- Generation Time: Sep 12, 2022 at 05:44 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -89,7 +89,7 @@ CREATE TABLE `homes` (
 --
 
 INSERT INTO `homes` (`id`, `image`, `title`, `buttonName`, `link`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'images/home/1662498103.jpg', '<p><span style=\"color: rgb(41, 41, 42); font-family: futura-pt; font-size: 61px; font-weight: 700; text-align: center; background-color: rgb(247, 247, 247);\">Hello. We Are IA.</span><br></p>', 'WHO WE ARE', '#', 1, 1, '2022-09-06 21:01:43', '2022-09-06 21:27:19', NULL),
+(1, 'images/home/1662498103.jpg', '<p><span style=\"color: rgb(41, 41, 42); font-family: futura-pt; font-size: 61px; font-weight: 700; text-align: center; background-color: rgb(247, 247, 247);\">Hello. We Are KRIBTREE.</span><br></p>', 'WHO WE ARE', '#', 1, 1, '2022-09-06 21:01:43', '2022-09-06 21:27:19', NULL),
 (2, 'images/home/1662498229.jpg', '<p><span style=\"color: rgb(41, 41, 42); font-family: futura-pt; font-size: 61px; font-weight: 700; text-align: center; background-color: rgb(239, 239, 239);\">We Know Environments.</span><br></p>', 'WHAT WE DO', '#', 2, 1, '2022-09-06 21:03:49', '2022-09-06 21:28:03', NULL),
 (3, 'images/home/1662498296.jpg', '<div class=\"thrv_wrapper thrv_text_element optml-bg-lazyloaded\" data-css=\"tve-u-1826ea639e9\" style=\"box-sizing: content-box; font-family: futura-pt; overflow-wrap: break-word; margin: 0px; padding: 1px; font-size: 18px; box-shadow: none !important; --tve-applied-box-shadow:none  !important;\"><p data-css=\"tve-u-1826ecddc51\" style=\"box-sizing: inherit; font-family: inherit; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 24px; --tcb-typography-font-family: inherit; text-shadow: rgba(255, 255, 255, 0.72) 2px 2px 2px; --tve-applied-text-shadow:2px 2px 2px rgba(255,255,255,0.72); text-align: center; font-size: 61px !important; line-height: 1.2em !important; font-weight: var(--g-bold-weight,bold)  !important; --tcb-applied-color:rgb(41,41,42)  !important; --tve-applied-color:rgb(41,41,42)  !important;\"><span style=\"color: rgb(66, 66, 66);\">We Solve the Right Problems.</span><br></p></div>', 'HOW WE DO IT', '#', 3, 1, '2022-09-06 21:04:56', '2022-09-06 21:29:13', NULL),
 (4, 'images/home/1662498336.jpg', '<p><span style=\"color: rgb(41, 41, 42); font-family: futura-pt; font-size: 61px; font-weight: 700; text-align: center;\">See Our Press.</span><br></p>', 'WHAT THEY\'RE SAYING', '#', 4, 1, '2022-09-06 21:05:36', '2022-09-06 21:05:36', NULL),
@@ -395,7 +395,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Aslam', 'admin@gmail.com', '2022-09-06 20:35:25', '$2y$10$p6R6/T/.TOl43T47PQO/kezYdWMCmVOTxW74ZGChOkPo8N7y9BjYS', 'LiG7xKtGRpOtKa06gx4ZNZXj7xSdT2FDbaqn1S71r1LndVGb5jRXz9zlECtJ', NULL, NULL);
+(1, 'Aslam', 'admin@gmail.com', '2022-09-06 20:35:25', '$2y$10$p6R6/T/.TOl43T47PQO/kezYdWMCmVOTxW74ZGChOkPo8N7y9BjYS', 'PnAdtD3HdH8RcaDFGiNr5MUusvcbYToc9JEBIe5V3a2e6OAQ7HSo6lrBolHj', NULL, NULL);
 
 --
 -- Indexes for dumped tables
