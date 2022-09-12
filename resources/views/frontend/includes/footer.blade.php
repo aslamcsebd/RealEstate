@@ -39,21 +39,20 @@
    // $('.table').dataTable( {
    //    "pageLength": 3
    // } );
-</script>
 
-<script type="text/javascript">
    $('.table').DataTable({
       "lengthMenu": [ [5, 10, 25, 50, -1], [5, 10, 25, 50, "All"] ]
    });
 </script>
 
+{{-- Home page side_menu --}}
 <script>
    $(document).ready(function(){
 
       $(document).on('click','.js-menu_toggle.closed',function(e){
          e.preventDefault(); $('.list_load, .list_item').stop();
          $(this).removeClass('closed').addClass('opened');
-         $('.side_menu').css({ 'left':'0px' });
+         $('.side_menu').css({ 'right':'0px' });
          var count = $('.list_item').length;
          $('.list_load').slideDown( (count*.6)*100 );
          
@@ -73,7 +72,7 @@
          e.preventDefault(); $('.list_load, .list_item').stop();
          $(this).removeClass('opened').addClass('closed');
 
-         $('.side_menu').css({ 'left':'-250px' });
+         $('.side_menu').css({ 'right':'-250px' });
 
          var count = $('.list_item').length;
          $('.list_item').css({
@@ -93,4 +92,3 @@
         introMessage: "✋ Hi! I'm form Real Programmer"
     };
 </script>
-
