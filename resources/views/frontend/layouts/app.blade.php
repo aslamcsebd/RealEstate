@@ -8,6 +8,8 @@
       <main lass="py-4 container">
          @yield('content')
       </main>
+       @include('frontend.includes.modal')
        @include('frontend.includes.footer')
    </body>
 </html>
+

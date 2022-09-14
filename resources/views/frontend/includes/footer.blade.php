@@ -1,5 +1,13 @@
+@php
+   $UsefullLink = App\Models\UsefullLink::where('status', 1)->orderBy('orderBy')->get();
+   $Leadership = App\Models\Leadership::where('status', 1)->orderBy('orderBy')->get(); 
+   $Contact = App\Models\Contact::where('status', 1)->orderBy('orderBy')->get();
+   $SocialSite = App\Models\SocialSite::where('status', 1)->orderBy('orderBy')->get();
+@endphp
 
-    <footer class="row justify-content-center bg-light">
+   <footer class="row justify-content-center bg-light">
+
+
 
       <div class="col-md-3">
       <ul>  
@@ -62,6 +70,10 @@
 <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('frontend/js/dataTables.min.js') }}"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
    
 {{-- script --}}
 {{-- Navbar Fixed --}}
