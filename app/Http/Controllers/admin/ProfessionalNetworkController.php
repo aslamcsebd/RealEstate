@@ -155,12 +155,7 @@ class ProfessionalNetworkController extends Controller {
    public function editProfessionalNetService2(Request $request){
       $validator = Validator::make($request->all(),[
          'details'=>'required'
-      ]); 
-
-      if(file_exists($request->oldImage)){
-         $a = "ok";
-      }else{ $a = "no";}
-dd($a);
+      ]);
 
       if($validator->fails()){
          $messages = $validator->messages(); 

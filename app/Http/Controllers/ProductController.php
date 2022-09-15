@@ -10,12 +10,14 @@ use Redirect;
 use DB;
 use Carbon\Carbon;
 
+use App\Models\ProductCategory;
 use App\Models\Product;
 
 class ProductController extends Controller{
 
-// Product
+    // Product
     public function product(){
+        $data['ProductCategory'] = ProductCategory::orderBy('orderBy')->get();
         $data['Product'] = Product::orderBy('orderBy')->get();
         return view('backend.pages.product', $data);
     }
@@ -102,4 +104,29 @@ class ProductController extends Controller{
     //     }
     //     return back()->with('success','Homes\'s image edit successfully');
     // }
+
+    // Add product category
+    public function addProductCategory(Request $request){
+
+        $validator = Validator::make($request->all(),[
+            'categoryName'=>'required|unique:product_categories,categoryName'
+        ]);   
+        
+        if($validator->fails()){
+            $messages = $validator->messages(); 
+            return Redirect::back()->withErrors($validator);
+        }
+
+        $id = ProductCategory::latest('orderBy')->first();
+        ($id==null) ? $orderId=1 : $orderId=$id->orderBy+1;
+
+        
+        ProductCategory::create([
+            'categoryName'=>$request->categoryName,
+            'orderBy'=>$orderId
+        ]);
+
+        $tab = 'productCategory';    
+        return back()->with('success','Product category name add successfully')->withInput(['tab' => $tab]);
+    }
 }

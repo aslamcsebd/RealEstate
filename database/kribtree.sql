@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 12, 2022 at 05:44 PM
+-- Generation Time: Sep 15, 2022 at 08:11 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `architect`
+-- Database: `kribtree`
 --
 
 -- --------------------------------------------------------
@@ -155,7 +155,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2022_09_10_003335_create_real_estates_table', 2),
 (17, '2022_09_11_000229_create_professional_networks_table', 3),
 (18, '2022_09_11_005013_create_professional_network_services_table', 3),
-(19, '2022_09_11_012942_create_professional_net_services_table', 4);
+(19, '2022_09_11_012942_create_professional_net_services_table', 4),
+(20, '2022_09_15_234745_create_product_categories_table', 5);
 
 -- --------------------------------------------------------
 
@@ -193,7 +194,33 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `image`, `title`, `details`, `price`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'images/product/1662749642.jpg', 'dfdf', '<p>dfdf</p>', '55', 1, 1, '2022-09-09 18:54:02', '2022-09-09 18:54:02', NULL);
+(1, 'images/product/1663271773.jpg', 'New product', '<p>This is new product</p>', '10', 1, 1, '2022-09-15 19:56:13', '2022-09-15 19:56:13', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_categories`
+--
+
+CREATE TABLE `product_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `categoryName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `orderBy` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_categories`
+--
+
+INSERT INTO `product_categories` (`id`, `categoryName`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(3, 'One\'s Finances', 1, 1, '2022-09-15 19:51:53', '2022-09-15 19:51:53', NULL),
+(4, 'Financial Goal', 2, 1, '2022-09-15 19:52:08', '2022-09-15 19:52:08', NULL),
+(5, 'Contract', 3, 1, '2022-09-15 19:52:20', '2022-09-15 19:52:20', NULL),
+(6, 'Bank', 4, 1, '2022-09-15 19:52:31', '2022-09-15 19:52:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -444,6 +471,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_categories`
+--
+ALTER TABLE `product_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `professional_networks`
 --
 ALTER TABLE `professional_networks`
@@ -518,13 +551,19 @@ ALTER TABLE `leaderships`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `product_categories`
+--
+ALTER TABLE `product_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `professional_networks`

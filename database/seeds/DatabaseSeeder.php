@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $path = 'database/architect.sql';
+        $path = 'database/kribtree.sql';
         $sql = file_get_contents($path);
         DB::unprepared($sql);
     }

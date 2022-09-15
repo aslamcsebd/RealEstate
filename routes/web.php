@@ -32,8 +32,11 @@ Route::middleware(['auth'])->group(function(){
       Route::get('editHome/', 'BackendController@editHome')->name('editHome');       
       Route::post('editHome2/', 'BackendController@editHome2')->name('editHome2');        
       
-      // Product
+      // Product      
       Route::get('product/', 'ProductController@product')->name('product');
+
+      Route::post('addProductCategory/', 'ProductController@addProductCategory')->name('addProductCategory');
+
       Route::post('addProduct/', 'ProductController@addProduct')->name('addProduct');
       Route::get('editProduct/', 'ProductController@editProduct')->name('editProduct');       
       Route::post('editProduct2/', 'ProductController@editProduct2')->name('editProduct2');   
