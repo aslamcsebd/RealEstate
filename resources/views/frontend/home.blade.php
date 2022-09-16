@@ -2,10 +2,10 @@
 
 @section('content')
 
-    {{-- <video autoplay muted loop id="myVideo">
+    <video autoplay muted loop id="myVideo">
         <source src="{{asset('images/home.mp4')}}" type="video/mp4">
     </video>
-    <h1 class="centered">KRIBTREE</h1>   --}}
+    <h1 class="centered">KRIBTREE</h1>
     
     @include('frontend.includes.menu-title')
    
