@@ -1,28 +1,34 @@
-<nav id="navbar_to" class="fixed-top navbar navbar-expand-md shadow-md py-0" style="height:4rem; background-color: #e3f2fd;">
-    <div class="container-fluid">
 
+<nav id="navbar_to" class="fixed-top navbar navbar-expand-md shadow-md py-0"
+    style="height:4rem; background-color: #e3f2fd;">
+    <div class="container-fluid">
         <a class="navbar-brand p-0 m-0" href="{{ url('/') }}">
             @include('common.logo')
         </a>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto"> 
-               <li class="nav-item">               
-                  <form class="d-flex ms-auto" role="search">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-               </li>
-               <li class="nav-item">
-                  <style>.wishList:hover{border-color:transparent !important;}</style>
-                  <button type="button" style="min-width: 10px; font-size: 18px" class="btn btn-sm wishList" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                     <i class="fa-solid fa-cart-shopping" style=";"></i>
-                  </button>
-               </li>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <div class="input-box-search">
+                        <input type="text" class="form-control">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </li>
+                <li class="nav-item">                   
+                    <button type="button" class="btn btn-sm wishList"
+                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="fa-solid fa-cart-shopping" style=";"></i>
+                    </button>
+                </li>
+
+                <li class="nav-item">                   
+                     <a class="nav-link active" aria-current="page" href="#">
+                        <i class="fa-solid fa-user"></i>
+                     </a>
+                </li>
             </ul>
 
             {{-- <ul class="navbar-nav ml-auto">
@@ -55,10 +61,8 @@
                   </div>
                </li>
                @endguest
-            </ul> --}}      
+            </ul> --}}
 
         </div>
     </div>
 </nav>
-
-

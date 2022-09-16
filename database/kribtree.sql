@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 15, 2022 at 08:11 PM
+-- Generation Time: Sep 16, 2022 at 04:17 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -148,7 +148,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2021_08_02_134009_create_social_sites_table', 1),
 (5, '2021_08_03_033321_create_homes_table', 1),
 (6, '2021_08_22_135951_create_contacts_table', 1),
-(7, '2022_09_06_231605_create_products_table', 1),
 (8, '2022_09_07_000040_create_usefull_links_table', 1),
 (9, '2022_09_07_000145_create_leaderships_table', 1),
 (12, '2022_09_10_003246_create_services_table', 2),
@@ -156,7 +155,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (17, '2022_09_11_000229_create_professional_networks_table', 3),
 (18, '2022_09_11_005013_create_professional_network_services_table', 3),
 (19, '2022_09_11_012942_create_professional_net_services_table', 4),
-(20, '2022_09_15_234745_create_product_categories_table', 5);
+(20, '2022_09_15_234745_create_product_categories_table', 5),
+(22, '2022_09_06_231605_create_products_table', 6);
 
 -- --------------------------------------------------------
 
@@ -178,8 +178,9 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `categoryId` int(11) NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `details` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `orderBy` int(11) NOT NULL,
@@ -193,8 +194,31 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `image`, `title`, `details`, `price`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'images/product/1663271773.jpg', 'New product', '<p>This is new product</p>', '10', 1, 1, '2022-09-15 19:56:13', '2022-09-15 19:56:13', NULL);
+INSERT INTO `products` (`id`, `categoryId`, `name`, `image`, `details`, `price`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(27, 1, 'Product name', 'images/product/1663344732.jpeg', '<p>details</p>', '150', 1, 1, '2022-09-16 16:12:12', '2022-09-16 16:12:12', NULL),
+(28, 2, 'Product name', 'images/product/1663344762.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>', '160', 2, 1, '2022-09-16 16:12:42', '2022-09-16 16:12:42', NULL),
+(29, 1, 'Product name', 'images/product/1663344792.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;</p>', '180', 3, 1, '2022-09-16 16:13:12', '2022-09-16 16:13:12', NULL),
+(30, 3, 'Product name', 'images/product/1663344814.jpeg', '<p>details</p>', '200', 4, 1, '2022-09-16 16:13:34', '2022-09-16 16:13:34', NULL),
+(31, 1, 'Product name', 'images/product/1663344832.jpeg', '<p>details</p>', '220', 5, 1, '2022-09-16 16:13:52', '2022-09-16 16:13:52', NULL),
+(32, 1, 'Product name', 'images/product/1663344853.jpeg', '<p>details</p>', '230', 6, 1, '2022-09-16 16:14:13', '2022-09-16 16:14:13', NULL),
+(33, 2, 'Product name', 'images/product/1663344732.jpeg', '<p>details</p>', '150', 1, 1, '2022-09-16 16:12:12', '2022-09-16 16:12:12', NULL),
+(34, 2, 'Product name', 'images/product/1663344762.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>', '160', 2, 1, '2022-09-16 16:12:42', '2022-09-16 16:12:42', NULL),
+(35, 2, 'Product name', 'images/product/1663344792.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;</p>', '180', 3, 1, '2022-09-16 16:13:12', '2022-09-16 16:13:12', NULL),
+(36, 2, 'Product name', 'images/product/1663344814.jpeg', '<p>details</p>', '200', 4, 1, '2022-09-16 16:13:34', '2022-09-16 16:13:34', NULL),
+(37, 2, 'Product name', 'images/product/1663344832.jpeg', '<p>details</p>', '220', 5, 1, '2022-09-16 16:13:52', '2022-09-16 16:13:52', NULL),
+(38, 2, 'Product name', 'images/product/1663344853.jpeg', '<p>details</p>', '230', 6, 1, '2022-09-16 16:14:13', '2022-09-16 16:14:13', NULL),
+(39, 3, 'Product name', 'images/product/1663344732.jpeg', '<p>details</p>', '150', 1, 1, '2022-09-16 16:12:12', '2022-09-16 16:12:12', NULL),
+(40, 3, 'Product name', 'images/product/1663344762.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>', '160', 2, 1, '2022-09-16 16:12:42', '2022-09-16 16:12:42', NULL),
+(41, 3, 'Product name', 'images/product/1663344792.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;</p>', '180', 3, 1, '2022-09-16 16:13:12', '2022-09-16 16:13:12', NULL),
+(42, 3, 'Product name', 'images/product/1663344814.jpeg', '<p>details</p>', '200', 4, 1, '2022-09-16 16:13:34', '2022-09-16 16:13:34', NULL),
+(43, 3, 'Product name', 'images/product/1663344832.jpeg', '<p>details</p>', '220', 5, 1, '2022-09-16 16:13:52', '2022-09-16 16:13:52', NULL),
+(44, 3, 'Product name', 'images/product/1663344853.jpeg', '<p>details</p>', '230', 6, 1, '2022-09-16 16:14:13', '2022-09-16 16:14:13', NULL),
+(45, 4, 'Product name', 'images/product/1663344732.jpeg', '<p>details</p>', '150', 1, 1, '2022-09-16 16:12:12', '2022-09-16 16:12:12', NULL),
+(46, 4, 'Product name', 'images/product/1663344762.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>', '160', 2, 1, '2022-09-16 16:12:42', '2022-09-16 16:12:42', NULL),
+(47, 4, 'Product name', 'images/product/1663344792.jpeg', '<p>details&nbsp;&nbsp;&nbsp;&nbsp;</p>', '180', 3, 1, '2022-09-16 16:13:12', '2022-09-16 16:13:12', NULL),
+(48, 4, 'Product name', 'images/product/1663344814.jpeg', '<p>details</p>', '200', 4, 1, '2022-09-16 16:13:34', '2022-09-16 16:13:34', NULL),
+(49, 4, 'Product name', 'images/product/1663344832.jpeg', '<p>details</p>', '220', 5, 1, '2022-09-16 16:13:52', '2022-09-16 16:13:52', NULL),
+(50, 4, 'Product name', 'images/product/1663344853.jpeg', '<p>details</p>', '230', 6, 1, '2022-09-16 16:14:13', '2022-09-16 16:14:13', NULL);
 
 -- --------------------------------------------------------
 
@@ -204,7 +228,7 @@ INSERT INTO `products` (`id`, `image`, `title`, `details`, `price`, `orderBy`, `
 
 CREATE TABLE `product_categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `categoryName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `orderBy` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -216,11 +240,11 @@ CREATE TABLE `product_categories` (
 -- Dumping data for table `product_categories`
 --
 
-INSERT INTO `product_categories` (`id`, `categoryName`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(3, 'One\'s Finances', 1, 1, '2022-09-15 19:51:53', '2022-09-15 19:51:53', NULL),
-(4, 'Financial Goal', 2, 1, '2022-09-15 19:52:08', '2022-09-15 19:52:08', NULL),
-(5, 'Contract', 3, 1, '2022-09-15 19:52:20', '2022-09-15 19:52:20', NULL),
-(6, 'Bank', 4, 1, '2022-09-15 19:52:31', '2022-09-15 19:52:31', NULL);
+INSERT INTO `product_categories` (`id`, `name`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'One\'s Finances', 1, 1, '2022-09-15 19:51:53', '2022-09-15 19:51:53', NULL),
+(2, 'Financial Goal', 2, 1, '2022-09-15 19:52:08', '2022-09-15 19:52:08', NULL),
+(3, 'Contract', 3, 1, '2022-09-15 19:52:20', '2022-09-15 19:52:20', NULL),
+(4, 'Bank', 4, 1, '2022-09-15 19:52:31', '2022-09-15 19:52:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -365,13 +389,9 @@ CREATE TABLE `social_sites` (
 
 INSERT INTO `social_sites` (`id`, `socialLogo`, `socialName`, `socialUrl`, `orderBy`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, '<i class=\"fab fa-linkedin\"></i>', 'Linkedin', '#', 1, 1, '2021-09-20 05:36:02', NULL, NULL),
-(2, '<i class=\"fab fa-github\"></i>', 'Github', '#', 4, 1, '2021-09-20 05:38:30', NULL, NULL),
-(3, '<i class=\"fab fa-stack-overflow\"></i>', 'Stack-overflow', 'stack-overflow', 5, 1, '2021-09-20 05:40:09', NULL, NULL),
+(2, '<i class=\"fab fa-youtube\"></i>', 'Youtube', '#', 4, 1, '2021-09-20 05:38:30', NULL, NULL),
 (4, '<i class=\"fab fa-facebook\"></i>', 'Facebook', '#', 6, 1, '2021-09-20 05:41:29', NULL, NULL),
-(5, '<i class=\"fab fa-instagram\"></i>', 'Instagram', '#', 7, 1, '2021-09-20 05:43:07', NULL, NULL),
-(6, '<i class=\"fab fa-twitter\"></i>', 'Twitter', '#', 8, 1, '2021-10-09 15:48:51', NULL, NULL),
-(7, '<i class=\'fab fa-skype\'></i>', 'Skype', '#', 3, 1, '2022-02-24 04:19:22', '2022-02-24 04:23:08', NULL),
-(8, '<i class=\'fab fa-whatsapp\'></i>', 'Whatsapp', '#', 2, 1, '2022-02-24 04:21:28', NULL, NULL);
+(6, '<i class=\"fab fa-twitter\"></i>', 'Twitter', '#', 8, 1, '2021-10-09 15:48:51', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -422,7 +442,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Aslam', 'admin@gmail.com', '2022-09-06 20:35:25', '$2y$10$p6R6/T/.TOl43T47PQO/kezYdWMCmVOTxW74ZGChOkPo8N7y9BjYS', 'PnAdtD3HdH8RcaDFGiNr5MUusvcbYToc9JEBIe5V3a2e6OAQ7HSo6lrBolHj', NULL, NULL);
+(1, 'Admin', 'admin@gmail.com', '2022-09-06 20:35:25', '$2y$10$p6R6/T/.TOl43T47PQO/kezYdWMCmVOTxW74ZGChOkPo8N7y9BjYS', 'PnAdtD3HdH8RcaDFGiNr5MUusvcbYToc9JEBIe5V3a2e6OAQ7HSo6lrBolHj', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -551,19 +571,19 @@ ALTER TABLE `leaderships`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `professional_networks`
@@ -593,7 +613,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `social_sites`
 --
 ALTER TABLE `social_sites`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `usefull_links`

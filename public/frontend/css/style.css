@@ -213,3 +213,15 @@ a,
 
 	/* side_menu { */
 	.list_item .active { background: rgba(255,255,255,.2); }
+
+	/* index-page  */
+    .input-box-search { position: relative; margin-top: 3px; }
+    .input-box-search i { position: absolute; right: 13px; top: 13px; color: gray; }
+    .input-box-search .form-control { height: 40px; background-color: #eeeeee69; border-color: darkturquoise; }
+    .input-box-search .form-control:focus { background-color: whitesmoke; box-shadow: none; border-color: darkturquoise; }
+
+	/* wishList,, user */
+	.fa-user{ min-width: 10px; font-size: 18px; margin-top: 5px; color: blue; }
+	.wishList, .fa-user{ min-width: 10px; font-size: 18px; }
+	.wishList:hover { border-color: transparent !important; }
+   

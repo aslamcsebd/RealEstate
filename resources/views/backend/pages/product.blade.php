@@ -34,7 +34,7 @@
                         <th>No</th>    
                         <th>Category</th>                       
                         <th>Image</th>
-                        <th>Title</th>
+                        <th>Name</th>
                         <th>Details</th>
                         <th>Price</th>
                         <th>Order By</th>
@@ -46,9 +46,9 @@
                         @foreach($Product as $item)
                            <tr>
                               <td width="5%">{{$loop->iteration}}</td>                              
-                              <td>One's Finances</td>                              
+                              <td>{{$item->productCategory->name}}</td>                              
                               <td class="p-2"><img src="{{$item->image}}" width="120" height="100"></td>
-                              <td>{!!$item->title!!}</td>
+                              <td>{!!$item->name!!}</td>
                               <td> {{ Str::limit(strip_tags($item->details), 50) }}
                               <td>${!!$item->price!!}</td>
                               <td width="8%">
@@ -105,7 +105,7 @@
                         @foreach($ProductCategory as $item)
                            <tr>
                               <td width="5%">{{$loop->iteration}}</td>
-                              <td>{!!$item->categoryName!!}</td>
+                              <td>{!!$item->name!!}</td>
                               <td width="10%">
                                  <div class="btn-group">
                                     <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -155,7 +155,7 @@
 
 @section('js')
 
-      {{-- Add image --}}
+      {{-- Add product --}}
       <div class="modal fade" id="addProduct" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -167,13 +167,25 @@
                   <form action="{{ url('addProduct') }}" method="post" enctype="multipart/form-data" class="needs-validation" >
                      @csrf                   
                      <div class="form">
+                        @php
+                           $productCategory = App\Models\ProductCategory::where('status', 1)->orderBy('orderBy')->get();
+                        @endphp
+                        <div class="form-group">
+                           <label for="categoryId">Product category :</label>
+                           <select name="categoryId" id="categoryId" class="form-control">
+                              <option value="">Select Now</option>  
+                                 @foreach($productCategory as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                 @endforeach
+                           </select>
+                        </div>     
+                        <div class="form-group">
+                           <label for="name">Product name :</label>
+                           <input name="name" class="form-control" id="name" type="text" placeholder="Ex: Submit button, Go button..." required>
+                        </div>
                         <div class="form-group">
                            <label for="image">Product Image :</label>
                            <input type="file" class="form-control imageFile" id="image" name="image" required>
-                        </div>
-                        <div class="form-group">
-                           <label for="title">Product name :</label>
-                           <input name="title" class="form-control" id="title" type="text" placeholder="Ex: Submit button, Go button..." required>
                         </div>
                         <div class="form-group">
                            <label for="details">Details :</label>
@@ -250,8 +262,8 @@
                      @csrf                   
                      <div class="form">                        
                         <div class="form-group">
-                           <label for="categoryName">Category name :</label>
-                           <input name="categoryName" class="form-control" id="categoryName" type="text" placeholder="Ex: One's Finances, Financial Goal..." required>
+                           <label for="name">Category name :</label>
+                           <input name="name" class="form-control" id="name" type="text" placeholder="Ex: One's Finances, Financial Goal..." required>
                         </div>
                      </div>
                      <div class="modal-footer">

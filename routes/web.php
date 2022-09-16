@@ -95,6 +95,7 @@ Route::middleware(['auth'])->group(function(){
    Route::get('who-we-are/', 'FrontendController@who_we_are')->name('who-we-are');
    Route::get('service-page/', 'FrontendController@service_page')->name('service-page');
    Route::get('professional-network-page/', 'FrontendController@professional_network')->name('professional-network-page');
+   Route::get('products/', 'FrontendController@products')->name('products');
   
    // All status change
       Route::get('/status/update', 'HomeController@changeStatus')->name('status');

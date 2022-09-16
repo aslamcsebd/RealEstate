@@ -28,6 +28,10 @@
                     href="{{Route('professional-network-page')}}">Professional network</a>
             </li>
             <li class="list_item">
+                <a class="{{ (request()->routeIs('products'))  ? 'active' : '' }}"
+                    href="{{Route('products')}}">Service product</a>
+            </li>
+            <li class="list_item">
                 <a class="{{ (request()->routeIs(''))  ? 'active' : '' }}"
                     href="#">What we do</a>
             </li>

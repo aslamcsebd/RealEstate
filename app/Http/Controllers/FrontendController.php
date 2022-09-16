@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Home;
+
+// Product
+use App\Models\ProductCategory;
 use App\Models\Product;
 
 use App\Models\UsefullLink;
@@ -49,6 +52,12 @@ class FrontendController extends Controller{
       $data['ProfessionalNetService'] = ProfessionalNetService::where('status', 1)->orderBy('orderBy')->get();
 
       return view('frontend.pages.professional-network', $data);
+   }
+   
+   // products page
+   public function products(){
+      $data['ProductCategory'] = ProductCategory::where('status', 1)->orderBy('orderBy')->get();
+      return view('frontend.pages.product-page', $data);
    }
    
 }

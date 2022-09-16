@@ -25,10 +25,11 @@ class ProductController extends Controller{
     public function addProduct(Request $request){
 
         $validator = Validator::make($request->all(),[
-        'image'=>'required',
-        'title'=>'required',
-        'details'=>'required',
-        'price'=>'required'
+            'categoryId'=>'required',
+            'name'=>'required',
+            'image'=>'required',
+            'details'=>'required',
+            'price'=>'required'
         ]);   
         
         if($validator->fails()){
@@ -53,8 +54,9 @@ class ProductController extends Controller{
         }   
 
         Product::create([
+            'categoryId'=>$request->categoryId,
+            'name'=>$request->name,
             'image'=>$imageLink,
-            'title'=>$request->title,
             'details'=>$request->details,
             'price'=>$request->price,
             'orderBy'=>$orderId
@@ -109,7 +111,7 @@ class ProductController extends Controller{
     public function addProductCategory(Request $request){
 
         $validator = Validator::make($request->all(),[
-            'categoryName'=>'required|unique:product_categories,categoryName'
+            'name'=>'required|unique:product_categories,name'
         ]);   
         
         if($validator->fails()){
@@ -122,7 +124,7 @@ class ProductController extends Controller{
 
         
         ProductCategory::create([
-            'categoryName'=>$request->categoryName,
+            'name'=>$request->name,
             'orderBy'=>$orderId
         ]);
 
