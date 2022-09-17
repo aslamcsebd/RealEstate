@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use DB;
 
 use App\Models\Home;
+
+use App\Models\ProductCategory;
 use App\Models\Product;
 
 use App\Models\UsefullLink;
@@ -22,6 +24,8 @@ class HomeController extends Controller{
  
    public function admin(Request $request){
       $data['Home'] = Home::all();
+      
+      $data['ProductCategory'] = ProductCategory::all();
       $data['Product'] = Product::all();
 
       $data['UsefullLink'] = UsefullLink::all();

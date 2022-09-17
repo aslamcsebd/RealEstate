@@ -23,6 +23,19 @@
                </div>
 
                <div class="col-lg-3 col-6">
+                  <div class="small-box bg-dark">
+                     <div class="inner text-center">
+                        <h3>{{$ProductCategory->count()}}</h3>
+                        <p>Product category</p>
+                     </div>
+                     <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                     </div>
+                     <a href="{{ route('product') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+               </div>
+
+               <div class="col-lg-3 col-6">
                   <div class="small-box bg-secondary">
                      <div class="inner text-center">
                         <h3>{{$Product->count()}}</h3>
@@ -39,7 +52,7 @@
                   <div class="small-box bg-danger">
                      <div class="inner text-center">
                         <h3>{{$UsefullLink->count()}}</h3>
-                        <p>UsefullLink</p>
+                        <p>Usefull link</p>
                      </div>
                      <div class="icon">
                         <i class="ion ion-pie-graph"></i>
@@ -65,7 +78,7 @@
                   <div class="small-box bg-success">
                      <div class="inner text-center">
                         <h3>{{$SocialSite->count()}}</h3>
-                        <p>SocialSite</p>
+                        <p>Social site</p>
                      </div>
                      <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -104,7 +117,7 @@
                   <div class="small-box bg-primary">
                      <div class="inner text-center">
                         <h3>{{$RealEstate->count()}}</h3>
-                        <p>RealEstate</p>
+                        <p>Real-Estate</p>
                      </div>
                      <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -117,7 +130,7 @@
                   <div class="small-box bg-light">
                      <div class="inner text-center">
                         <h3>{{$ProfessionalNetwork->count()}}</h3>
-                        <p>ProfessionalNetwork</p>
+                        <p>Professional network</p>
                      </div>
                      <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -130,7 +143,7 @@
                   <div class="small-box bg-dark">
                      <div class="inner text-center">
                         <h3>{{$ProfessionalNetService->count()}}</h3>
-                        <p>ProfessionalNetService</p>
+                        <p>Professional network service</p>
                      </div>
                      <div class="icon">
                         <i class="ion ion-stats-bars"></i>

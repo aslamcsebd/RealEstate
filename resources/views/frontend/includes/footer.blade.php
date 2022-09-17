@@ -151,7 +151,7 @@
             'margin-left':'-20px'
          });
          $('.list_load').slideUp(300);
-      });    
+      });
    });
 </script>
 
