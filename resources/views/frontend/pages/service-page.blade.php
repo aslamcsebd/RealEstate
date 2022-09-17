@@ -1,8 +1,6 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-
-    @include('frontend.includes.menu-title')
     
     <h1 class="text-center my-4">Service list</h1>
 

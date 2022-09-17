@@ -10,6 +10,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            @include('frontend.includes.top-menu-title')
+
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <div class="input-box-search">

@@ -2,13 +2,6 @@
 
 @section('content')
 
-    @include('frontend.includes.menu-title')
-    
-    <br>
-    <br>
-    <br>
-
-
       @foreach($ProductCategory as $category)
         <h1 class="text-center my-4">{{$category->name}}</h1>    
         @php

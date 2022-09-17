@@ -16,8 +16,8 @@
         <h4 class="menu_title pt-2 text-white">Menu Title</h4>
         <ul class="list_load">
             <li class="list_item">
-                <a class="{{ (request()->routeIs('who-we-are'))  ? 'active' : '' }}" 
-                    href="{{ Route('who-we-are') }}">Who we are</a>
+                <a class="{{ (request()->routeIs('products'))  ? 'active' : '' }}"
+                    href="{{Route('products')}}">Service product</a>
             </li>
             <li class="list_item">
                 <a class="{{ (request()->routeIs('service-page'))  ? 'active' : '' }}"
@@ -28,8 +28,8 @@
                     href="{{Route('professional-network-page')}}">Professional network</a>
             </li>
             <li class="list_item">
-                <a class="{{ (request()->routeIs('products'))  ? 'active' : '' }}"
-                    href="{{Route('products')}}">Service product</a>
+                <a class="{{ (request()->routeIs('who-we-are'))  ? 'active' : '' }}" 
+                    href="{{ Route('who-we-are') }}">Who we are</a>
             </li>
             <li class="list_item">
                 <a class="{{ (request()->routeIs(''))  ? 'active' : '' }}"
