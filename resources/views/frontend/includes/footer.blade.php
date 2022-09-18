@@ -1,69 +1,64 @@
 @php
-   $UsefullLink = App\Models\UsefullLink::where('status', 1)->orderBy('orderBy')->get();
-   $Leadership = App\Models\Leadership::where('status', 1)->orderBy('orderBy')->get(); 
-   $Contact = App\Models\Contact::where('status', 1)->orderBy('orderBy')->get();
-   $SocialSite = App\Models\SocialSite::where('status', 1)->orderBy('orderBy')->get();
+$UsefullLink = App\Models\UsefullLink::where('status', 1)->orderBy('orderBy')->get();
+$Leadership = App\Models\Leadership::where('status', 1)->orderBy('orderBy')->get();
+$Contact = App\Models\Contact::where('status', 1)->orderBy('orderBy')->get();
+$SocialSite = App\Models\SocialSite::where('status', 1)->orderBy('orderBy')->get();
 @endphp
 
-   <footer class="row justify-content-center bg-light">
+<footer>
+    <div class="row justify-content-center bg-light mx-0">
 
+        <div class="col-md-3 ">
+            <ul>
+                <h4>Useful links</h4>
+                @foreach($UsefullLink as $item)
+                    <li><a href="{{$item->url}}" target="_blank"> {{$item->title}}</a></li>
+                @endforeach
+            </ul>
+        </div>
 
+        <div class="col-md-3 ">
+            <ul>
+                <h4>Thought leadership</h4>
+                @foreach($Leadership as $item)
+                    <li><a href="{{$item->url}}" target="_blank"> {{$item->title}}</a></li>
+                @endforeach
+            </ul>
+        </div>
 
-      <div class="col-md-3">
-      <ul>  
-          <h4>Useful links</h4>
+        <div class="col-3 ">
+            <ul>
+                <h4>Contact</h4>
+                @foreach($Contact as $item)
+                    <li>{!!$item->logo!!} {!!$item->details!!} </li>
+                @endforeach
+            </ul>
+        </div>
 
-              @foreach($UsefullLink as $item)
-                  <li> <a href="{{$item->url}}" target="_blank"> {{$item->title}}</a></li>
-              @endforeach
-      </ul>
-      </div>
-  
-      <div class="col-md-3">      
-          <ul>
-              <h4>Thought leadership</h4>
-              @foreach($Leadership as $item)
-                  <li> <a href="{{$item->url}}" target="_blank"> {{$item->title}}</a></li>
-              @endforeach
-      </ul>
-      </div>
-  
-      <div class="col-3">
-      
-      <ul>
-          <h4>Contact</h4>
-              @foreach($Contact as $item)
-                  <li>
-                  {!!$item->logo!!} {!!$item->details!!}
-                  </li>
-              @endforeach
-      </ul>
-      </div>
-  
-      <div class="col-3">    
-  
-      <ul class="social">
-              <h4>Social</h4>
-              @foreach($SocialSite as $item)
-                  <li>                    
-                      <a href="{!!$item->socialUrl!!}" target="_blank" title="{!!$item->socialName!!}">
-                          {!!$item->socialLogo!!}
-                      </a>
-                  </li>
-              @endforeach
-          </ul>
-  
-      <ul>
-          <li>
-              <a href="#" target="_blank">Subscribe</a>
-          </li>
-          <li>
-              <a href="#" target="_blank">Privacy policy</a>
-          </li>
-      </ul>
-      </div>
-  
-  </footer>   
+        <div class="col-3">
+            <ul class="social">
+                <h4>Social</h4>
+                @foreach($SocialSite as $item)
+                    <li>
+                        <a href="{!!$item->socialUrl!!}" target="_blank" title="{!!$item->socialName!!}">
+                            {!!$item->socialLogo!!}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="#" target="_blank">Subscribe</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">Privacy policy</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
 
 
 <!-- jQuery -->
@@ -74,11 +69,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
-   
+
 {{-- script --}}
 {{-- Navbar Fixed --}}
 <script type="text/javascript">
-   // if ($(window).width() > 992) {
+    // if ($(window).width() > 992) {
       $(window).scroll(function(){
          if ($(this).scrollTop() > 0) { //default: 40
          $('#navbar_top').addClass("fixed-top");
@@ -95,7 +90,7 @@
 
 {{-- Bootstrap alert --}}
 <script type="text/javascript">
-   window.setTimeout(function() {
+    window.setTimeout(function() {
       $(".alert").fadeTo(500, 0).slideUp(500, function(){
          $(this).remove(); 
       });
@@ -104,7 +99,7 @@
 
 {{-- Datatable --}}
 <script type="text/javascript">
-   $(document).ready( function () {
+    $(document).ready( function () {
       $('.table').DataTable();
    } );
    // $('.table').dataTable( {
@@ -118,7 +113,7 @@
 
 {{-- Home page side_menu --}}
 <script>
-   $(document).ready(function(){
+    $(document).ready(function(){
 
       $(document).on('click','.js-menu_toggle.closed',function(e){
          e.preventDefault(); $('.list_load, .list_item').stop();
@@ -158,15 +153,15 @@
 {{-- Botman --}}
 <script src="{{ asset('frontend/js/widget.js') }}"></script>
 <script>
-   var botmanWidget = {
+    var botmanWidget = {
         aboutText: 'Write Something',
-        introMessage: "✋ Hi! I'm form Real Programmer"
+        introMessage: "✋ Hi! I'm form KRIBTREE"
     };
 </script>
 
 {{-- Navbar hover --}}
 <script type="text/javascript">
-	window.addEventListener("resize", function() {
+    window.addEventListener("resize", function() {
 		"use strict"; window.location.reload(); 
 	});
    

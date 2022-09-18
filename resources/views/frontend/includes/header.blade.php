@@ -1,5 +1,5 @@
 
-<nav id="navbar_to" class="fixed-top navbar navbar-expand-md shadow-md py-0"
+<nav id="navbar_top" class="navbar navbar-expand-md shadow-md py-0"
     style="height:4rem; background-color: #e3f2fd;">
     <div class="container-fluid">
         <a class="navbar-brand p-0 m-0" href="{{ url('/') }}">
@@ -21,16 +21,15 @@
                     </div>
                 </li>
                 <li class="nav-item">                   
-                    <button type="button" class="btn btn-sm wishList"
-                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="btn btn-sm wishList" data-bs-toggle="modal" data-bs-target="#shopping">
                         <i class="fa-solid fa-cart-shopping" style=";"></i>
                     </button>
                 </li>
 
-                <li class="nav-item">                   
-                     <a class="nav-link active" aria-current="page" href="#">
-                        <i class="fa-solid fa-user"></i>
-                     </a>
+                <li class="nav-item">    
+                  <button type="button" class="btn btn-sm wishList" data-bs-toggle="modal" data-bs-target="#userLogin">
+                     <i class="fa-solid fa-user"></i>
+                  </button>
                 </li>
             </ul>
 
