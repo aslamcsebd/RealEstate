@@ -1,8 +1,8 @@
 @php
-$UsefullLink = App\Models\UsefullLink::where('status', 1)->orderBy('orderBy')->get();
-$Leadership = App\Models\Leadership::where('status', 1)->orderBy('orderBy')->get();
-$Contact = App\Models\Contact::where('status', 1)->orderBy('orderBy')->get();
-$SocialSite = App\Models\SocialSite::where('status', 1)->orderBy('orderBy')->get();
+    $UsefullLink = App\Models\UsefullLink::where('status', 1)->orderBy('orderBy')->get();
+    $Leadership = App\Models\Leadership::where('status', 1)->orderBy('orderBy')->get();
+    $Contact = App\Models\Contact::where('status', 1)->orderBy('orderBy')->get();
+    $SocialSite = App\Models\SocialSite::where('status', 1)->orderBy('orderBy')->get();
 @endphp
 
 <footer>
