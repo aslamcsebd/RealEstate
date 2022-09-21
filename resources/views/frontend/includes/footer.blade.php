@@ -6,7 +6,7 @@
 @endphp
 
 <footer>
-    <div class="row justify-content-center bg-light mx-0">
+    <div class="row justify-content-center mx-0">
 
         <div class="col-md-3 ">
             <ul>

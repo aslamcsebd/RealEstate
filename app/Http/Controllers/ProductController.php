@@ -131,4 +131,10 @@ class ProductController extends Controller{
         $tab = 'productCategory';    
         return back()->with('success','Product category name add successfully')->withInput(['tab' => $tab]);
     }
+
+     // Buy-sell-rent
+    public function buy(){
+        $data['Product'] = Product::orderBy('orderBy')->get();
+        return view('frontend.pages.buy-sell-rent', $data);
+    }
 }

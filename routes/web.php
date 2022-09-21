@@ -96,6 +96,7 @@ Route::middleware(['auth'])->group(function(){
    Route::get('service-page/', 'FrontendController@service_page')->name('service-page');
    Route::get('professional-network-page/', 'FrontendController@professional_network')->name('professional-network-page');
    Route::get('products/', 'FrontendController@products')->name('products');
+   Route::get('buy', 'ProductController@buy')->name('buy');
   
    // All status change
       Route::get('/status/update', 'HomeController@changeStatus')->name('status');

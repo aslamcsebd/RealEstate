@@ -1,6 +1,7 @@
 <style>
     .dynamic li a {font-size: 16px;}
     .dynamic li .active{ color: #000; font-weight: bold; }
+    .dynamic .nav-item a:hover{ color: rgb(0, 106, 255); }
     .dropdown-item.active, .dropdown-item:active { background-color: unset; }
 </style>
 
