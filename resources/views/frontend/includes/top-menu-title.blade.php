@@ -30,13 +30,18 @@
             <a class="nav-link {{ (request()->routeIs('who-we-are'))  ? 'active' : '' }}" 
                 href="{{ Route('who-we-are') }}">Who we are</a>
         </li>
+       
         <li class="nav-item">
-            <a class="nav-link {{ (request()->routeIs(''))  ? 'active' : '' }}"
-                href="#">What we do</a>
-        </li>
+            <a class="nav-link {{ (request()->routeIs('agent-finder'))  ? 'active' : '' }}"
+                href="{{ Route('agent-finder') }}">Agent finder</a>
+        </li>       
         <li class="nav-item dropdown">
             <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
             <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item {{ (request()->routeIs(''))  ? 'active' : '' }}"
+                        href="#">What we do</a>
+                </li>
                 <li>
                     <a class="dropdown-item {{ (request()->routeIs(''))  ? 'active' : '' }}"
                         href="#">How we do it</a>

@@ -30,6 +30,10 @@
             <li class="list_item">
                 <a class="{{ (request()->routeIs('who-we-are'))  ? 'active' : '' }}" 
                     href="{{ Route('who-we-are') }}">Who we are</a>
+            </li>            
+            <li class="list_item">
+                <a class="{{ (request()->routeIs('agent-finder'))  ? 'active' : '' }}"
+                    href="{{ Route('agent-finder') }}">Agent finder</a>
             </li>
             <li class="list_item">
                 <a class="{{ (request()->routeIs(''))  ? 'active' : '' }}"
