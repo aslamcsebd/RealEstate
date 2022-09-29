@@ -31,10 +31,10 @@
                 href="{{ Route('who-we-are') }}">Who we are</a>
         </li>
        
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link {{ (request()->routeIs('agent-finder'))  ? 'active' : '' }}"
                 href="{{ Route('agent-finder') }}">Agent finder</a>
-        </li>       
+        </li>        --}}
         <li class="nav-item dropdown">
             <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
             <ul class="dropdown-menu">
